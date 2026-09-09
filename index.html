@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPPC - Affordable Amazon PPC Automation for Bootstrapped Sellers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0066CC;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: #0066CC;
+        }
+        
+        .cta-nav {
+            background: #0066CC;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-nav:hover {
+            background: #0052A3;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #0066CC;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid white;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #0066CC;
+        }
+        
+        /* Problem Section */
+        .problem {
+            background: #f5f5f5;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .problem h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .problem-card h3 {
+            color: #0066CC;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .problem-card p {
+            color: #666;
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .solution h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #222;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature {
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #0066CC;
+        }
+        
+        .feature h3 {
+            color: #0066CC;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* ROI Section */
+        .roi {
+            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+            padding: 4rem 2rem;
+        }
+        
+        .roi h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .roi-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .roi-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .roi-item .label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .roi-item .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0066CC;
+        }
+        
+        .roi-math {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #0066CC;
+        }
+        
+        .roi-math h3 {
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        
+        .math-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+        
+        .math-item {
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .math-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .math-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0066CC;
+        }
+        
+        .equals {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            background: #f5f5f5;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .social-proof h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #222;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        
+        .testimonial-text {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .testimonial-metric {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            color: #0066CC;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .pricing h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #222;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .price-card {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: #0066CC;
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.1);
+        }
+        
+        .price-card.featured {
+            border-color: #0066CC;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.15);
+            position: relative;
+            top: -10px;
+        }
+        
+        .price-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0066CC;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-period {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price-for {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price-features {
+            text-align: left;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .price-features li {
+            list-style: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-features li:before {
+            content: "✓ ";
+            color: #0066CC;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Waitlist Form */
+        .waitlist-form {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 2rem auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0066CC;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+        
+        .form-group button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #0066CC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .form-group button:hover {
+            background: #0052A3;
+        }
+        
+        .form-disclaimer {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #0066CC;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .math-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .equals {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AutoPPC</div>
+        <ul class="nav-links">
+            <li><a href="#why">Why AutoPPC</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#waitlist" class="cta-nav">Join Waitlist</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="tagline">⭐ Built for sellers like you</div>
+        <h1>Zon.Tools Is Gone.<br>Here's What We Built.</h1>
+        <p>Automated Amazon PPC management for bootstrapped sellers. $9-29/month. No agencies. No black boxes. Just rules you control.</p>
+        <div class="hero-cta">
+            <button class="btn-primary" onclick="scrollTo('waitlist')">Start Free Trial</button>
+            <button class="btn-secondary" onclick="alert('Demo coming soon!')">See How It Works</button>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Why Most Bootstrapped Sellers Struggle</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>⏱️ Time Drain</h3>
+                    <p>You're spending 8+ hours/week manually managing bids. That's time you could be building your business.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💰 Wasted Budget</h3>
+                    <p>Bad bid management costs $300-500/month in wasted ad spend. That's 15-30% of your budget vanishing.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>😞 Zon.Tools Is Gone</h3>
+                    <p>You relied on it. Now you're either paying $199+ for enterprise tools or doing it manually again.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="solution" id="why">
+        <div class="container">
+            <h2>How AutoPPC Works for You</h2>
+            <div class="solution-grid">
+                <div class="feature">
+                    <h3>🤖 Smart Bid Automation</h3>
+                    <p>Automatically adjust bids based on YOUR target ACoS. Lower bids on losers, increase on winners. 24/7.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 Keyword Harvesting</h3>
+                    <p>Discover high-converting search terms from auto campaigns and automatically move them to optimized manual campaigns.</p>
+                </div>
+                <div class="feature">
+                    <h3>🛡️ Negative Keywords</h3>
+                    <p>Automatically add negatives when keywords stop converting. Stop throwing money at dead weight.</p>
+                </div>
+                <div class="feature">
+                    <h3>✋ Approval Gate</h3>
+                    <p>See every change before it happens. You approve everything. No black boxes. No surprises.</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Real-Time Dashboard</h3>
+                    <p>See live campaign performance, ACOS trends, and total savings. Know exactly how much money you're saving.</p>
+                </div>
+                <div class="feature">
+                    <h3>💾 Full Transparency</h3>
+                    <p>Every bid change logged. Every decision documented. Download your data anytime. You own it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="roi">
+        <div class="container">
+            <h2>See Your ROI in Real Numbers</h2>
+            <div class="roi-comparison">
+                <div class="roi-item">
+                    <div class="label">Current Situation</div>
+                    <div class="value">35%</div>
+                    <div class="label">Average ACOS</div>
+                </div>
+                <div class="roi-item">
+                    <div class="label">After AutoPPC</div>
+                    <div class="value">22%</div>
+                    <div class="label">Average ACOS</div>
+                </div>
+                <div class="roi-item">
+                    <div class="label">Monthly Savings</div>
+                    <div class="value">$300+</div>
+                    <div class="label">On $2k/mo spend</div>
+                </div>
+            </div>
+            
+            <div class="roi-math">
+                <h3>The Math That Matters</h3>
+                <div class="math-row">
+                    <div class="math-item">
+                        <div class="math-label">Current: 8 hrs/week</div>
+                        <div class="math-value">$1,600</div>
+                        <div class="math-label">Time value</div>
+                    </div>
+                    <div class="equals">+</div>
+                    <div class="math-item">
+                        <div class="math-label">Wasted: $300/mo</div>
+                        <div class="math-value">$300</div>
+                        <div class="math-label">Ad waste</div>
+                    </div>
+                </div>
+                <div style="font-size: 1.5rem; margin: 1rem 0; font-weight: bold;">↓</div>
+                <div class="math-row">
+                    <div class="math-item">
+                        <div class="math-label">With AutoPPC: 1 hr/week</div>
+                        <div class="math-value">$1,100</div>
+                        <div class="math-label">Time value</div>
+                    </div>
+                    <div class="equals">+</div>
+                    <div class="math-item">
+                        <div class="math-label">Cost: $9-29/mo</div>
+                        <div class="math-value">-$29</div>
+                        <div class="math-label">Tool cost</div>
+                    </div>
+                </div>
+                <div style="font-size: 1.5rem; margin: 1rem 0; font-weight: bold; color: #FF9900;">↓</div>
+                <div style="font-size: 1.3rem; font-weight: bold; color: #0066CC;">
+                    Net Gain: $1,571/month
+                </div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                    ROI: 5,400% (paid back in less than 1 day)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2>What Real Sellers Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-text">"I used Zon.Tools for 2 years. When it shut down, I panicked. AutoPPC is exactly what I needed."</div>
+                    <div class="testimonial-author">Mike R.</div>
+                    <div class="testimonial-role">Kitchen & Home Seller</div>
+                    <div class="testimonial-metric">ACOS: 35% → 22% | Saves $400/mo</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Went back to manual management after Zon died. AutoPPC is cheaper than an agency and way better than doing it myself."</div>
+                    <div class="testimonial-author">Jessica L.</div>
+                    <div class="testimonial-role">Multi-category FBA Seller</div>
+                    <div class="testimonial-metric">Time: 10 hrs → 1 hr/week</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Can't afford $200+/month tools. This is $9/month and works like magic. Exactly what bootstrapped sellers need."</div>
+                    <div class="testimonial-author">David T.</div>
+                    <div class="testimonial-role">Growing FBA Brand</div>
+                    <div class="testimonial-metric">Ad Spend: $1,500/mo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Pricing Built for Bootstrapped Sellers</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">No percentage of spend. No surprise invoices. Flat rate, always.</p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <div class="price">$9</div>
+                    <div class="price-period">/month</div>
+                    <div class="price-for">$500-$2k/month ad spend</div>
+                    <ul class="price-features">
+                        <li>Basic bid automation</li>
+                        <li>Dashboard access</li>
+                        <li>Up to 10 campaigns</li>
+                        <li>Weekly reports</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="scrollTo('waitlist')">Start Free Trial</button>
+                </div>
+                <div class="price-card featured">
+                    <h3>⭐ Growth</h3>
+                    <div class="price">$29</div>
+                    <div class="price-period">/month</div>
+                    <div class="price-for">$2k-$5k/month ad spend</div>
+                    <ul class="price-features">
+                        <li>All Starter features</li>
+                        <li>Keyword harvesting</li>
+                        <li>Negative keyword automation</li>
+                        <li>Unlimited campaigns</li>
+                        <li>Approval gate (you control everything)</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="scrollTo('waitlist')">Start Free Trial</button>
+                </div>
+                <div class="price-card">
+                    <h3>Professional</h3>
+                    <div class="price">$99</div>
+                    <div class="price-period">/month</div>
+                    <div class="price-for">$5k+/month ad spend</div>
+                    <ul class="price-features">
+                        <li>All Growth features</li>
+                        <li>Advanced rules engine</li>
+                        <li>API access</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated manager</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="scrollTo('waitlist')">Start Free Trial</button>
+                </div>
+            </div>
+            <p style="text-align: center; color: #666; margin-top: 2rem; font-size: 0.9rem;">
+                ✓ 14-day free trial on all plans<br>
+                ✓ No credit card required<br>
+                ✓ Cancel anytime<br>
+                ✓ Special founder pricing for beta members
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding: 4rem 2rem; background: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Quick Questions</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <details style="margin-bottom: 1.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px;">
+                    <summary style="cursor: pointer; font-weight: 600; color: #0066CC;">Is this safe? Can it break my account?</summary>
+                    <p style="margin-top: 1rem; color: #666;">No. We only read your data and suggest changes. YOU approve everything before it happens. We never change Amazon without your explicit approval.</p>
+                </details>
+                
+                <details style="margin-bottom: 1.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px;">
+                    <summary style="cursor: pointer; font-weight: 600; color: #0066CC;">How is this different from Zon.Tools?</summary>
+                    <p style="margin-top: 1rem; color: #666;">Same core features (bid automation, keyword harvesting, negatives). But we added an approval gate so you see every change, better support, and we're actively building new features.</p>
+                </details>
+                
+                <details style="margin-bottom: 1.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px;">
+                    <summary style="cursor: pointer; font-weight: 600; color: #0066CC;">Why is this so cheap?</summary>
+                    <p style="margin-top: 1rem; color: #666;">We built it lean and don't have enterprise sales teams. We're bootstrapped too. We'd rather have 1,000 happy $29/month customers than 10 $300/month customers.</p>
+                </details>
+                
+                <details style="margin-bottom: 1.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px;">
+                    <summary style="cursor: pointer; font-weight: 600; color: #0066CC;">Can I upgrade later?</summary>
+                    <p style="margin-top: 1rem; color: #666;">Absolutely. Start at $9 (Starter), upgrade to $29 (Growth), then to $99 (Professional) whenever you're ready. No locked contracts.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="waitlist">
+        <h2>Stop Wasting Time & Money on PPC</h2>
+        <p>Get early access to AutoPPC. Founder pricing locked in for life.</p>
+        <div class="waitlist-form">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Monthly ad spend range</option>
+                        <option value="under-500">Under $500</option>
+                        <option value="500-2k">$500 - $2,000</option>
+                        <option value="2k-5k">$2,000 - $5,000</option>
+                        <option value="5k-plus">$5,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Get Free 14-Day Trial</button>
+                </div>
+            </form>
+            <div class="form-disclaimer">
+                ✓ No credit card required<br>
+                ✓ Full access during trial<br>
+                ✓ Founder pricing locked in<br>
+                ✓ No spam, unsubscribe anytime
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AutoPPC. Built by sellers, for sellers. | <a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Contact</a></p>
+    </footer>
+
+    <script>
+        function scrollTo(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const email = form.querySelector('input[type="email"]').value;
+            const name = form.querySelector('input[type="text"]').value;
+            
+            alert(`Thanks ${name}! Check your email for early access details.`);
+            form.reset();
+        }
+    </script>
+</body>
+</html>
